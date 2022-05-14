@@ -19,8 +19,8 @@ def call(ImageVersion){
 		      def last = versions[2]
 		      last = last.toInteger() + 1;
 		      new_version = versions[0] + '.' + versions[1]+'.'+"$last"
-		      echo "$new_version"
-			echo "$version"	   
+			   echo "${new_version} new version"
+			   echo "${version} old version"	   
 			
 		      
 		      }else if("${ImageVersion}"=="Minor"){
