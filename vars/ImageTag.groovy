@@ -22,7 +22,7 @@ def call(ImageVersion){
 			   echo "${new_version} new version"
 			   echo "${version} old version"
 			   
-			return version, new_version	   
+			return [version, new_version]	   
 			
 		      
 		      }else if("${ImageVersion}"=="Minor"){
