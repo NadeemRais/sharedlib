@@ -1,8 +1,7 @@
 def call(ImageVersion, application){
     echo "${ImageVersion}"
     def new_version = ''
-    def version = ''
-    //def application = 'backend'	
+    def version = ''	
     sh "curl -X GET -u '${NEXUS_USERNAME}':'${NEXUS_PASSWORD}' http://192.168.3.37:8081/repository/my-repo/VERSION -O"
 		version = sh returnStdout: true, script: "cat VERSION | grep '${application}' | grep -Eo '[0-9]+(.[0-9]+)*'"		
 		echo "$version"
