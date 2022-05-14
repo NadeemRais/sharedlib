@@ -1,10 +1,4 @@
-//   def version = readFile('VERSION')
-//   def versions = version.split('\\.')
-//   def major = versions[0]
-//   def minor = versions[0] + '.' + versions[1]
-//   def patch = version.trim()
-
-def imageVersionTag(ImageVersion){
+def call(ImageVersion){
     echo "${ImageVersion}"
     def new_version = ''
     def version = ''
