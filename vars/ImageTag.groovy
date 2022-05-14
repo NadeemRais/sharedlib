@@ -4,7 +4,7 @@
 //   def minor = versions[0] + '.' + versions[1]
 //   def patch = version.trim()
 
-def call(ImageVersion){
+def imageVersionTag(ImageVersion){
     echo "${ImageVersion}"
     def new_version = ''
     def version = ''
