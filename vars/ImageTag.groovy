@@ -4,13 +4,13 @@
 //   def minor = versions[0] + '.' + versions[1]
 //   def patch = version.trim()
 
-def call(ImageTag){
-    echo "${ImageTag}"
+def call(ImageVersion){
+    echo "${ImageVersion}"
     sh "curl -X GET -u '${NEXUS_USERNAME}':'${NEXUS_PASSWORD}' http://192.168.3.37:8081/repository/my-repo/VERSION -O"
 		version = sh returnStdout: true, script: "cat VERSION | grep '${application}' | grep -Eo '[0-9]+(.[0-9]+)*'"		
 		echo "$version"
  
-		   if("${ImageTag}"=="Patch"){
+		   if("${ImageVersion}"=="Patch"){
                       echo "This is patch version"
 		      def versions = version.split('\\.')
 		      def last = versions[2]
@@ -18,7 +18,7 @@ def call(ImageTag){
 		      new_version = versions[0] + '.' + versions[1]+'.'+"$last"
 		     
 		      
-		      }else if("${ImageTag}"=="Minor"){
+		      }else if("${ImageVersion}"=="Minor"){
 		      def versions = version.split('\\.')
 		      def mid = versions[1]
 		      mid = mid.toInteger() + 1;
