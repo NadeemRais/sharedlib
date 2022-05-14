@@ -18,18 +18,18 @@ def call(ImageVersion){
 		      def versions = version.split('\\.')
 		      def last = versions[2]
 		      last = last.toInteger() + 1;
-		      new_version = versions[0] + '.' + versions[1]+'.'+"$last"
-			   echo "${new_version} new version"
-			   echo "${version} old version"
-			   
-			return [version, new_version]	   
+		      new_version = versions[0] + '.' + versions[1]+'.'+"$last"   
+		      return [version, new_version]	   
 			
 		      
 		      }else if("${ImageVersion}"=="Minor"){
+		      echo "This is Minor version"	   
 		      def versions = version.split('\\.')
 		      def mid = versions[1]
 		      mid = mid.toInteger() + 1;
 		      new_version = versions[0] + '.' + "$mid"+'.'+0
+		      return [version, new_version]	   
+			   
 		      echo "$new_version"
 		     
 		      
@@ -39,6 +39,7 @@ def call(ImageVersion){
 		      def first = versions[0]
 		      first = first.toInteger() + 1;
 		      new_version = "$first" + '.' + 0 +'.' + 0
+		      return [version, new_version]
 		      echo "$new_version"
 		    
 		    }     
