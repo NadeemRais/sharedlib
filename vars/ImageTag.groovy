@@ -1,4 +1,4 @@
-def call(ImageVersion, application{
+def call(ImageVersion, application){
     echo "${ImageVersion}"
     def new_version = ''
     def version = ''
