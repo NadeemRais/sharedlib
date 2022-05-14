@@ -37,7 +37,3 @@ def call(ImageVersion, application){
 		    
 		    }     
 }
-
-def hello(name){
-	echo "hello ${name} how are you"
-}
